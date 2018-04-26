@@ -1,6 +1,6 @@
 {
     "env": {
-        "node": true,
+        "react": true,
         "es6": true,
         "jest": true
     },
