@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "build/dist",
+    "baseUrl": "http://localhost",
     "module": "esnext",
     "target": "es5",
     "lib": ["es6", "dom"],
