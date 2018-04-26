@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "lint:fix": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix",
     "start": "react-app-rewired start --scripts-version react-scripts-ts",
     "build": "react-app-rewired build --scripts-version react-scripts-ts",
     "test": "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
@@ -24,6 +26,7 @@
     "babel": "^6.23.0",
     "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-decorators": "^6.24.1",
+    "babel-preset-mobx": "^1.0.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewired": "^1.5.2",
     "typescript": "^2.8.3"
