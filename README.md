@@ -4,12 +4,12 @@ How to create a React + TypeScript +MobX
 ## initial work
 
 ### установить create-react-app
-```
+```bash
 $ npm install -g create-react-app
 ```
 
 ### создать проект
-```
+```bash
 $ create-react-app my-app --scripts-version=react-scripts-ts
 $ cd my-app/
 ```
