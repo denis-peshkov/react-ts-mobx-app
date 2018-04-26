@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "outDir": "build/dist",
-    "baseUrl": "http://localhost",
+    "baseUrl": ".",
     "module": "esnext",
     "target": "es5",
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react", /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
     "moduleResolution": "node",
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
@@ -25,6 +25,7 @@
     "acceptance-tests",
     "webpack",
     "jest",
+    "config-overrides.js",
     "src/setupTests.ts"
   ]
 }
