@@ -16,6 +16,20 @@
 .env.test.local
 .env.production.local
 
-npm-debug.log*
+# css
+*.css
+
+# yarn
+yarn.lock
 yarn-debug.log*
 yarn-error.log*
+
+# npm
+package-lock.json
+npm-debug.log*
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
