@@ -46,9 +46,6 @@ $ cd my-app/
 +
 +# yarn
 +yarn.lock
-yarn-debug.log*
-yarn-error.log*
-
 +# npm
 +package-lock.json
 +npm-debug.log*
