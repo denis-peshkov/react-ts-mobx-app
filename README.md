@@ -1,5 +1,12 @@
 # react-ts-mobx-app
-How to create a React + TypeScript +MobX
+How to create a React + TypeScript + MobX?
+This quick start guide will teach you how to wire up TypeScript with [React](http://facebook.github.io/react/).
+By the end, you'll have
+
+* a project with React and TypeScript
+* linting with [TSLint](https://github.com/palantir/tslint)
+* testing with [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/), and
+* state management with [MobX](https://mobx.js.org/)
 
 ## initial work
 
@@ -9,7 +16,7 @@ $ npm install -g create-react-app
 ```
 
 ### создать проект
-```bash
+```shell
 $ create-react-app my-app --scripts-version=react-scripts-ts
 $ cd my-app/
 ```
