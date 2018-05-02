@@ -5,8 +5,11 @@
   "scripts": {
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint:fix": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "yarn build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "react-app-rewired start --scripts-version react-scripts-ts",
-    "build": "react-app-rewired build --scripts-version react-scripts-ts",
+    "build": "yarn build-css && yarn build-js",
+    "build-js": "react-app-rewired build --scripts-version react-scripts-ts",
     "test": "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
     "eject": "react-app-rewired eject --scripts-version react-scripts-ts"
   },
@@ -27,6 +30,7 @@
     "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-decorators": "^6.24.1",
     "babel-preset-mobx": "^1.0.2",
+    "node-sass-chokidar": "^1.2.2",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewired": "^1.5.2",
     "typescript": "^2.8.3"
