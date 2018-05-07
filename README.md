@@ -12,13 +12,13 @@ By the end, you'll have
 
 - [Create project with TS](#create-project-with-ts)
   - [install create-react-app](#install-create-react-app)
-  - [fix tsconfig.json](#fix-tsconfig.json)
-  - [update .gitignore](#update-.gitignore)
+  - [fix tsconfig.json](#fix-tsconfigjson)
+  - [update .gitignore](#update-gitignore)
   - [yarn build](#yarn-build)
 - [Add MobX](#add-mobx)
   - [add react-app-rewired](#add-react-app-rewired)
-  - [add config-overrides.js](#add-config-overrides.js)
-  - [update package.json](#update-package.json)
+  - [add config-overrides.js](#add-config-overridesjs)
+  - [update package.json](#update-packagejson)
 
 ## Create project with TS
 
