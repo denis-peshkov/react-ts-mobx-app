@@ -31,7 +31,7 @@ $ cd my-app/
 ```
 
 ### fix tsconfig.json
-Как оказалось есть проблема с вновь созданным проектом, запустив `yarn build` он не собирается. Фиксим проблему:
+There is a problem with just created project, can't build it with `yarn build` command. Fix of the problem:
 ```diff
   "compilerOptions": {
 +    "baseUrl": "http://localhost",
@@ -39,6 +39,7 @@ $ cd my-app/
 ```
 
 ### update .gitignore
+Add some rules for VS Code. Also exclude css files from the repository, it should build authomatically.
 ```diff
 -npm-debug.log*
 +# css
@@ -67,39 +68,30 @@ Your app is ready to be deployed!
 
 ## Add MobX
 
-### add re
-```
-$ yarn add react-app-rewired awesome-typescript-loader babel-core babel-plugin-import babel-preset-react-app -D
+### add react-app-rewired
+```bash
+$ yarn add react-app-rewired react-app-rewire-mobx -D
+$ yarn add mobx mobx-react mobx-react-router
 ```
 
-### добавить config-overrides.js
+### add config-overrides.js
 ```
+const { injectBabelPlugin } = require('react-app-rewired');
+const rewireMobX = require('react-app-rewire-mobx');
+
 module.exports = function override(config, env) {
-  const tsLoader = config.module.rules.find(conf => {
-    return conf.loader && conf.loader.includes('ts-loader')
-  })
-  tsLoader.loader = require.resolve('awesome-typescript-loader')
-  tsLoader.query = {
-    useBabel: true,
-  }
+  // add a plugin
+  config = injectBabelPlugin('babel-plugin-styled-components', config);
 
-  const tsLintLoader = config.module.rules.find(conf => {
-    return conf.loader && conf.loader.includes('tslint-loader')
-  })
-  tsLintLoader.options = tsLintLoader.options || {}
-  // FIXED Warning: The 'no-use-before-declare' rule requires type infomation.
-  tsLintLoader.options.typeCheck = true
-
-  const path = require('path')
-  // For import with absolute path
-  config.resolve.modules = [path.resolve('src')].concat(config.resolve.modules)
+  // use the MobX rewire
+  config = rewireMobX(config, env);
 
   return config
 }
 ```
 
-### изменить package.json
-Код подключает враппер react-app-rewired
+### update package.json
+Replace standard commands with react-app-rewired commands.
 ```diff
   "scripts": {
 -   "start": "react-scripts-ts start",
