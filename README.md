@@ -16,6 +16,9 @@ By the end, you'll have
   - [update .gitignore](#update-.gitignore)
   - [yarn build](#yarn-build)
 - [Add MobX](#add-mobx)
+  - [add react-app-rewired](#add-react-app-rewired)
+  - [add config-overrides.js](#add-config-overrides.js)
+  - [update package.json](#update-package.json)
 
 ## Create project with TS
 
